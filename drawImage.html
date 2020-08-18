@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<style type="text/css">
+		.content{
+			width: 80%;
+			min-height: 600px;
+			background-color: white;
+			margin: auto;
+		}
+		canvas{
+			background-color: gray;
+			margin:auto;
+		}
+	</style>
+	<div class="content">
+		<canvas id="canvas" width="250" height="270"></canvas>
+		<img id="imagen" style="visibility: hidden;" src="Blason_Gondor.png">
+	</div>
+	<script type="text/javascript">
+
+		var canvas = document.getElementById('canvas');
+		if (canvas.getContext){
+
+			var ctx = canvas.getContext('2d')
+
+			window.onload = function() {
+				var img = document.getElementById('imagen');
+				ctx.drawImage(img,10,10);
+			}
+		}
+	</script>
+</body>
+</html>

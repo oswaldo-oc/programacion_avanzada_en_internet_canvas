@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<style type="text/css">
+		.content{
+			width: 80%;
+			min-height: 600px;
+			background-color: white;
+			margin: auto;
+		}
+		canvas{
+			background-color: gray;
+			margin:auto;
+		}
+	</style>
+	<div class="content">
+		<canvas id="canvas" width="250" height="250"></canvas>
+	</div>
+	<script type="text/javascript">
+
+		var canvas = document.getElementById('canvas');
+		if (canvas.getContext){
+
+			var ctx = canvas.getContext('2d')
+
+			ctx.beginPath();
+			ctx.arc(125, 125, 80, 0, 2 * Math.PI);
+			ctx.stroke();
+			ctx.closePath();	
+		}
+	</script>
+</body>
+</html>

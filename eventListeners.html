@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EventListeners</title>
+</head>
+<body>
+	<style type="text/css">
+		.content{
+			width: 80%;
+			min-height: 600px;
+			background-color: gray;
+			margin: auto;
+		}
+		canvas{
+			background-color: white;
+			margin:auto;
+		}
+	</style>
+	<div class="content">
+		<canvas id="canvas" width="600" height="300"></canvas>
+	</div>
+	<script type="text/javascript">
+
+		var canvas = document.getElementById('canvas');
+		if (canvas.getContext){
+
+			var ctx = canvas.getContext('2d')
+			var isPressed;
+
+			canvas.addEventListener("mousedown", function(){
+				isPressed = true;
+			});
+
+			canvas.addEventListener("mouseup", function(){
+				isPressed = false;
+			});
+
+			canvas.addEventListener("mousemove", function(){
+				
+				if (isPressed) {
+					
+					ctx.fillStyle = getRandomColor();
+					ctx.beginPath();
+					ctx.arc(event.layerX, event.layerY, 10, 0, 2 * Math.PI);
+					ctx.fill();
+					ctx.closePath();
+				}
+			});
+		}
+
+		function getRandomColor() {
+			var letters = '0123456789ABCDEF';
+			var color = '#';
+		  	for (var i = 0; i < 6; i++) {
+		    	color += letters[Math.floor(Math.random() * 16)];
+		 	}
+			return color;
+		}
+	</script>
+</body>
+</html>

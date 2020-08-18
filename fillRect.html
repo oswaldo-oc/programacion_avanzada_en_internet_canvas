@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<style type="text/css">
+		.content{
+
+		}
+	</style>
+	<div class="content">
+		<canvas id="canvas"></canvas>
+	</div>
+	<script type="text/javascript">
+
+		var canvas = document.getElementById('canvas');
+		if (canvas.getContext){
+
+			var ctx = canvas.getContext('2d')
+
+			ctx.fillStyle = 'rgb(255,0,0)';
+			ctx.fillRect(0,0,100,100);
+			ctx.fillStyle = 'rgba(0,0,255,0.5)';
+			ctx.fillRect(40,40,100,100);		
+		}
+	</script>
+</body>
+</html>

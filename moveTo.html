@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<style type="text/css">
+		.content{
+			width: 80%;
+			min-height: 600px;
+			background-color: gray;
+			margin: auto;
+		}
+		canvas{
+			background-color: gray;
+			margin:auto;
+		}
+	</style>
+	<div class="content">
+		<canvas id="canvas"></canvas>
+	</div>
+	<script type="text/javascript">
+
+		var canvas = document.getElementById('canvas');
+		if (canvas.getContext){
+
+			var ctx = canvas.getContext('2d')
+
+			ctx.moveTo(25,25);
+			ctx.lineTo(300,300);
+			ctx.stroke();		
+		}
+	</script>
+</body>
+</html>
